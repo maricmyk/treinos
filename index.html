@@ -8,9 +8,10 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #f5f5f5;
             color: #333;
+            font-size: 16px;
         }
         .container {
             max-width: 100%;
@@ -19,23 +20,26 @@
         h1 {
             text-align: center;
             color: #1a237e;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
         .tabs {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 15px;
-            gap: 5px;
+            margin-bottom: 10px;
+            gap: 3px;
         }
         .tab-button {
             background-color: #e0e0e0;
             border: none;
-            padding: 10px 15px;
+            padding: 10px 5px;
             cursor: pointer;
-            border-radius: 5px 5px 0 0;
+            border-radius: 5px;
             font-weight: bold;
             flex-grow: 1;
             text-align: center;
+            font-size: 0.8rem;
+            min-width: 18%;
         }
         .tab-button.active {
             background-color: #3f51b5;
@@ -44,8 +48,8 @@
         .tab-content {
             display: none;
             background-color: white;
-            padding: 15px;
-            border-radius: 0 5px 5px 5px;
+            padding: 12px;
+            border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .tab-content.active {
@@ -54,11 +58,11 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
         }
         th, td {
-            padding: 10px 5px;
+            padding: 8px 4px;
             text-align: center;
             border: 1px solid #ddd;
         }
@@ -67,87 +71,116 @@
             color: white;
             position: sticky;
             top: 0;
+            font-size: 0.75rem;
         }
         .exercise-name {
             text-align: left;
             font-weight: bold;
-            width: 35%;
+            width: 30%;
+            padding-left: 5px;
         }
         .exercise-details {
-            font-size: 12px;
+            font-size: 0.7rem;
             color: #666;
             font-style: italic;
             font-weight: normal;
+            display: block;
+            margin-top: 3px;
         }
         input[type="number"] {
-            width: 60px;
-            padding: 5px;
+            width: 45px;
+            padding: 4px;
             border: 1px solid #ddd;
             border-radius: 3px;
             text-align: center;
+            font-size: 0.8rem;
+        }
+        input[type="text"] {
+            width: 95%;
+            padding: 4px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 0.8rem;
         }
         .notes-section {
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .notes-section h3 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #3f51b5;
+            font-size: 1rem;
         }
         textarea {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             border: 1px solid #ddd;
             border-radius: 5px;
             resize: vertical;
             min-height: 60px;
+            font-size: 0.9rem;
         }
-        .print-button {
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 10px 0;
+        }
+        .action-button {
             background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 10px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            margin: 15px 0;
+            font-size: 0.9rem;
             cursor: pointer;
             border-radius: 5px;
+            flex-grow: 1;
+            min-width: 30%;
         }
-        @media (max-width: 768px) {
-            table {
-                font-size: 12px;
-            }
-            th, td {
-                padding: 6px 3px;
-            }
-            input[type="number"] {
-                width: 40px;
-                padding: 3px;
-            }
-            .tab-button {
-                padding: 8px;
-                font-size: 14px;
-            }
+        .action-button.blue {
+            background-color: #2196F3;
+        }
+        .action-button.orange {
+            background-color: #FF9800;
         }
         .week-selector {
-            margin-bottom: 15px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            background-color: #fff;
+            padding: 8px;
+            border-radius: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .week-selector button {
             background-color: #3f51b5;
             color: white;
             border: none;
-            padding: 8px 12px;
-            margin: 0 5px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            border-radius: 3px;
         }
         .week-number {
             font-weight: bold;
-            padding: 0 15px;
+            padding: 0 20px;
+            font-size: 1.1rem;
         }
-        /* Cores diferentes para cada treino */
+        .tab-header {
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+        }
         #tab1 .tab-header {
             background-color: #C8E6C9; /* Verde claro */
         }
@@ -163,11 +196,79 @@
         #tab5 .tab-header {
             background-color: #FFCDD2; /* Vermelho claro */
         }
-        .tab-header {
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            font-weight: bold;
+        /* Layout móvel aprimorado */
+        @media (max-width: 600px) {
+            .mobile-table {
+                border: none;
+                margin-bottom: 20px;
+            }
+            .mobile-table thead {
+                display: none;
+            }
+            .mobile-table tr {
+                margin-bottom: 15px;
+                display: block;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 8px;
+                background-color: #f9f9f9;
+            }
+            .mobile-table td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+                text-align: right;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+            .mobile-table td:last-child {
+                border-bottom: none;
+            }
+            .mobile-table td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                text-align: left;
+                padding-right: 5px;
+                color: #3f51b5;
+            }
+            .mobile-table td.exercise-name {
+                display: block;
+                text-align: left;
+                font-weight: bold;
+                width: 100%;
+                padding: 8px 5px;
+                background-color: #e8eaf6;
+                border-radius: 3px 3px 0 0;
+                margin-bottom: 5px;
+                font-size: 0.9rem;
+            }
+            .mobile-table .exercise-details {
+                margin-top: 3px;
+                display: block;
+            }
+            input[type="text"] {
+                width: 150px;
+            }
+        }
+        /* Botão flutuante para rápido salvamento */
+        .quick-save {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 1.4rem;
         }
     </style>
 </head>
@@ -182,658 +283,674 @@
         </div>
         
         <div class="tabs">
-            <button class="tab-button active" onclick="openTab('tab1')">Segunda: Pernas (Quad/Glúteos)</button>
-            <button class="tab-button" onclick="openTab('tab2')">Terça: Superior</button>
-            <button class="tab-button" onclick="openTab('tab3')">Quarta: Abdome</button>
-            <button class="tab-button" onclick="openTab('tab4')">Quinta: Braços/Ombros</button>
-            <button class="tab-button" onclick="openTab('tab5')">Sexta: Pernas (Post/Glúteos)</button>
+            <button class="tab-button active" onclick="openTab('tab1')">SEG<br>Pernas</button>
+            <button class="tab-button" onclick="openTab('tab2')">TER<br>Superior</button>
+            <button class="tab-button" onclick="openTab('tab3')">QUA<br>Abdome</button>
+            <button class="tab-button" onclick="openTab('tab4')">QUI<br>Braços</button>
+            <button class="tab-button" onclick="openTab('tab5')">SEX<br>Pernas</button>
         </div>
         
         <div id="tab1" class="tab-content active">
-            <div class="tab-header">Treino A - Pernas (Quadríceps e Glúteos) [40 minutos]</div>
-            <table>
-                <tr>
-                    <th class="exercise-name">Exercício</th>
-                    <th>Séries x Reps</th>
-                    <th>Intervalo</th>
-                    <th>Carga (kg)</th>
-                    <th>Observações</th>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Aquecimento<br><span class="exercise-details">Mobilidade para quadril e joelhos</span></td>
-                    <td>3 min</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Leg Press Horizontal<br><span class="exercise-details">Foco na ativação do quadríceps</span></td>
-                    <td>4 x 12</td>
-                    <td>45s</td>
-                    <td><input type="number" id="a1-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Cadeira Extensora<br><span class="exercise-details">Ênfase na contração no topo</span></td>
-                    <td>3 x 15</td>
-                    <td>45s</td>
-                    <td><input type="number" id="a2-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Agachamento Sumô com Kettlebell<br><span class="exercise-details">Posição ampla, ênfase nos adutores</span></td>
-                    <td>3 x 12</td>
-                    <td>45s</td>
-                    <td><input type="number" id="a3-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Elevação Pélvica<br><span class="exercise-details">Squeeze no topo do movimento</span></td>
-                    <td>3 x 15</td>
-                    <td>40s</td>
-                    <td><input type="number" id="a4-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Avanço com Halteres<br><span class="exercise-details">Movimento controlado</span></td>
-                    <td>3 x 12/perna</td>
-                    <td>40s</td>
-                    <td><input type="number" id="a5-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Abdominais Retos<br><span class="exercise-details">Manter região lombar no chão</span></td>
-                    <td>3 x 20</td>
-                    <td>30s</td>
-                    <td>Peso corporal</td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Mini-HIIT Final<br><span class="exercise-details">Saltos no lugar</span></td>
-                    <td>4 x (30s + 15s)</td>
-                    <td>15s</td>
-                    <td>Peso corporal</td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
+            <div class="tab-header">Treino A - Segunda (Quadríceps e Glúteos)</div>
+            
+            <table class="mobile-table">
+                <thead>
+                    <tr>
+                        <th>Exercício</th>
+                        <th>Séries x Reps</th>
+                        <th>Intervalo</th>
+                        <th>Carga (kg)</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="exercise-name">Aquecimento<span class="exercise-details">Mobilidade para quadril e joelhos</span></td>
+                        <td data-label="Séries x Reps">3 min</td>
+                        <td data-label="Intervalo">-</td>
+                        <td data-label="Carga (kg)">-</td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Leg Press Horizontal<span class="exercise-details">Foco na ativação do quadríceps</span></td>
+                        <td data-label="Séries x Reps">4 x 12</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="a1-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Cadeira Extensora<span class="exercise-details">Ênfase na contração no topo</span></td>
+                        <td data-label="Séries x Reps">3 x 15</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="a2-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Agachamento Sumô<span class="exercise-details">Posição ampla, ênfase nos adutores</span></td>
+                        <td data-label="Séries x Reps">3 x 12</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="a3-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Elevação Pélvica<span class="exercise-details">Squeeze no topo do movimento</span></td>
+                        <td data-label="Séries x Reps">3 x 15</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="a4-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Avanço com Halteres<span class="exercise-details">Movimento controlado</span></td>
+                        <td data-label="Séries x Reps">3 x 12/perna</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="a5-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Abdominais Retos<span class="exercise-details">Manter região lombar no chão</span></td>
+                        <td data-label="Séries x Reps">3 x 20</td>
+                        <td data-label="Intervalo">30s</td>
+                        <td data-label="Carga (kg)">Peso corporal</td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                </tbody>
             </table>
             
             <div class="notes-section">
-                <h3>Observações Gerais do Treino A:</h3>
+                <h3>Observações Gerais:</h3>
                 <textarea placeholder="Registre suas impressões, dificuldades ou ajustes necessários..."></textarea>
             </div>
         </div>
         
         <div id="tab2" class="tab-content">
-            <div class="tab-header">Treino B - Superior (Costas e Peito) [30 minutos]</div>
-            <table>
-                <tr>
-                    <th class="exercise-name">Exercício</th>
-                    <th>Séries x Reps</th>
-                    <th>Intervalo</th>
-                    <th>Carga (kg)</th>
-                    <th>Observações</th>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Puxada na Polia Alta<br><span class="exercise-details">Pegada média, cotovelos próximos ao corpo</span></td>
-                    <td>3 x 12</td>
-                    <td>45s</td>
-                    <td><input type="number" id="b1-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Remada Baixa na Polia<br><span class="exercise-details">Pegada neutra, tronco ereto</span></td>
-                    <td>3 x 12</td>
-                    <td>45s</td>
-                    <td><input type="number" id="b2-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Supino Reto com Barra<br><span class="exercise-details">Controle na descida</span></td>
-                    <td>3 x 12</td>
-                    <td>45s</td>
-                    <td><input type="number" id="b3-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
+            <div class="tab-header">Treino B - Terça (Costas e Peito)</div>
+            
+            <table class="mobile-table">
+                <thead>
+                    <tr>
+                        <th>Exercício</th>
+                        <th>Séries x Reps</th>
+                        <th>Intervalo</th>
+                        <th>Carga (kg)</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="exercise-name">Puxada na Polia Alta<span class="exercise-details">Pegada média, cotovelos próximos ao corpo</span></td>
+                        <td data-label="Séries x Reps">3 x 12</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="b1-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Remada Baixa na Polia<span class="exercise-details">Pegada neutra, tronco ereto</span></td>
+                        <td data-label="Séries x Reps">3 x 12</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="b2-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Supino Reto com Barra<span class="exercise-details">Controle na descida</span></td>
+                        <td data-label="Séries x Reps">3 x 12</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="b3-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                </tbody>
             </table>
             
             <div class="notes-section">
-                <h3>Observações Gerais do Treino B:</h3>
+                <h3>Observações Gerais:</h3>
                 <textarea placeholder="Registre suas impressões, dificuldades ou ajustes necessários..."></textarea>
             </div>
         </div>
         
         <div id="tab3" class="tab-content">
-            <div class="tab-header">Treino C - Abdome e Core [30 minutos]</div>
-            <table>
-                <tr>
-                    <th class="exercise-name">Exercício</th>
-                    <th>Séries x Reps</th>
-                    <th>Intervalo</th>
-                    <th>Tempo/Carga</th>
-                    <th>Observações</th>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Prancha Abdominal<br><span class="exercise-details">Manter quadril alinhado</span></td>
-                    <td>3 x 40s</td>
-                    <td>30s</td>
-                    <td><input type="number" id="c1-time" min="0" placeholder="Seg"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Abdominal Infra com Pernas Elevadas<br><span class="exercise-details">Movimento controlado</span></td>
-                    <td>3 x 15</td>
-                    <td>40s</td>
-                    <td>Peso corporal</td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Abdominal Bicicleta<br><span class="exercise-details">Rotação completa, tocar cotovelo no joelho</span></td>
-                    <td>3 x 20</td>
-                    <td>40s</td>
-                    <td>Peso corporal</td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Prancha Lateral<br><span class="exercise-details">Alternando lados</span></td>
-                    <td>3 x 30s/lado</td>
-                    <td>30s</td>
-                    <td><input type="number" id="c4-time" min="0" placeholder="Seg"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Abdominal Crunch com Rotação<br><span class="exercise-details">Movimento fluido</span></td>
-                    <td>3 x 15/lado</td>
-                    <td>40s</td>
-                    <td>Peso corporal</td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
+            <div class="tab-header">Treino C - Quarta (Abdome e Core)</div>
+            
+            <table class="mobile-table">
+                <thead>
+                    <tr>
+                        <th>Exercício</th>
+                        <th>Séries x Reps</th>
+                        <th>Intervalo</th>
+                        <th>Tempo/Carga</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="exercise-name">Prancha Abdominal<span class="exercise-details">Manter quadril alinhado</span></td>
+                        <td data-label="Séries x Reps">3 x 40s</td>
+                        <td data-label="Intervalo">30s</td>
+                        <td data-label="Tempo (s)"><input type="number" id="c1-time" min="0" placeholder="Seg"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Abdominal Infra<span class="exercise-details">Pernas elevadas, movimento controlado</span></td>
+                        <td data-label="Séries x Reps">3 x 15</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Tempo/Carga">Peso corporal</td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Abdominal Bicicleta<span class="exercise-details">Rotação completa, cotovelo no joelho</span></td>
+                        <td data-label="Séries x Reps">3 x 20</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Tempo/Carga">Peso corporal</td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Prancha Lateral<span class="exercise-details">Alternando lados</span></td>
+                        <td data-label="Séries x Reps">3 x 30s/lado</td>
+                        <td data-label="Intervalo">30s</td>
+                        <td data-label="Tempo (s)"><input type="number" id="c4-time" min="0" placeholder="Seg"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Abdominal com Rotação<span class="exercise-details">Movimento fluido</span></td>
+                        <td data-label="Séries x Reps">3 x 15/lado</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Tempo/Carga">Peso corporal</td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                </tbody>
             </table>
             
             <div class="notes-section">
-                <h3>Observações Gerais do Treino C:</h3>
+                <h3>Observações Gerais:</h3>
                 <textarea placeholder="Registre suas impressões, dificuldades ou ajustes necessários..."></textarea>
             </div>
         </div>
         
         <div id="tab4" class="tab-content">
-            <div class="tab-header">Treino D - Braços e Ombros [30 minutos]</div>
-            <table>
-                <tr>
-                    <th class="exercise-name">Exercício</th>
-                    <th>Séries x Reps</th>
-                    <th>Intervalo</th>
-                    <th>Carga (kg)</th>
-                    <th>Observações</th>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Desenvolvimento com Halteres<br><span class="exercise-details">Palmas voltadas para frente</span></td>
-                    <td>3 x 12</td>
-                    <td>45s</td>
-                    <td><input type="number" id="d1-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Elevação Lateral<br><span class="exercise-details">Cotovelos levemente flexionados</span></td>
-                    <td>3 x 15</td>
-                    <td>45s</td>
-                    <td><input type="number" id="d2-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Tríceps Corda<br><span class="exercise-details">Abrir corda no final do movimento</span></td>
-                    <td>3 x 15</td>
-                    <td>40s</td>
-                    <td><input type="number" id="d3-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Rosca Martelo com Halteres<br><span class="exercise-details">Pegada neutra, cotovelos fixos</span></td>
-                    <td>2 x 12</td>
-                    <td>40s</td>
-                    <td><input type="number" id="d4-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
+            <div class="tab-header">Treino D - Quinta (Braços e Ombros)</div>
+            
+            <table class="mobile-table">
+                <thead>
+                    <tr>
+                        <th>Exercício</th>
+                        <th>Séries x Reps</th>
+                        <th>Intervalo</th>
+                        <th>Carga (kg)</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="exercise-name">Desenvolvimento<span class="exercise-details">Com halteres, palmas para frente</span></td>
+                        <td data-label="Séries x Reps">3 x 12</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="d1-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Elevação Lateral<span class="exercise-details">Cotovelos levemente flexionados</span></td>
+                        <td data-label="Séries x Reps">3 x 15</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="d2-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Tríceps Corda<span class="exercise-details">Abrir corda no final do movimento</span></td>
+                        <td data-label="Séries x Reps">3 x 15</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="d3-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Rosca Martelo<span class="exercise-details">Pegada neutra, cotovelos fixos</span></td>
+                        <td data-label="Séries x Reps">2 x 12</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="d4-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                </tbody>
             </table>
             
             <div class="notes-section">
-                <h3>Observações Gerais do Treino D:</h3>
+                <h3>Observações Gerais:</h3>
                 <textarea placeholder="Registre suas impressões, dificuldades ou ajustes necessários..."></textarea>
             </div>
         </div>
         
         <div id="tab5" class="tab-content">
-            <div class="tab-header">Treino E - Pernas (Posterior e Glúteos) [40 minutos]</div>
-            <table>
-                <tr>
-                    <th class="exercise-name">Exercício</th>
-                    <th>Séries x Reps</th>
-                    <th>Intervalo</th>
-                    <th>Carga (kg)</th>
-                    <th>Observações</th>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Aquecimento<br><span class="exercise-details">Mobilidade para ativação glútea</span></td>
-                    <td>3 min</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Cadeira Flexora<br><span class="exercise-details">Squeeze no ponto de contração</span></td>
-                    <td>4 x 12</td>
-                    <td>45s</td>
-                    <td><input type="number" id="e1-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Stiff com Barra<br><span class="exercise-details">Manter joelhos levemente flexionados</span></td>
-                    <td>3 x 12</td>
-                    <td>45s</td>
-                    <td><input type="number" id="e2-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Cadeira Abdutora<br><span class="exercise-details">Contração no ponto máximo</span></td>
-                    <td>4 x 15</td>
-                    <td>45s</td>
-                    <td><input type="number" id="e3-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Chutes na Polia (Kickback)<br><span class="exercise-details">Contrair glúteo no topo</span></td>
-                    <td>3 x 15/perna</td>
-                    <td>40s</td>
-                    <td><input type="number" id="e4-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Good Morning com Anilha<br><span class="exercise-details">Manter costas retas</span></td>
-                    <td>3 x 12</td>
-                    <td>40s</td>
-                    <td><input type="number" id="e5-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Abdominal Oblíquo<br><span class="exercise-details">Manter contração durante o movimento</span></td>
-                    <td>3 x 15/lado</td>
-                    <td>30s</td>
-                    <td>Peso corporal</td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
-                <tr>
-                    <td class="exercise-name">Elevação de Panturrilha em Pé<br><span class="exercise-details">Amplitude completa de movimento</span></td>
-                    <td>3 x 20</td>
-                    <td>30s</td>
-                    <td><input type="number" id="e7-weight" min="0"></td>
-                    <td><input type="text" placeholder="Notas..."></td>
-                </tr>
+            <div class="tab-header">Treino E - Sexta (Posterior e Glúteos)</div>
+            
+            <table class="mobile-table">
+                <thead>
+                    <tr>
+                        <th>Exercício</th>
+                        <th>Séries x Reps</th>
+                        <th>Intervalo</th>
+                        <th>Carga (kg)</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="exercise-name">Aquecimento<span class="exercise-details">Mobilidade para ativação glútea</span></td>
+                        <td data-label="Séries x Reps">3 min</td>
+                        <td data-label="Intervalo">-</td>
+                        <td data-label="Carga (kg)">-</td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Cadeira Flexora<span class="exercise-details">Squeeze no ponto de contração</span></td>
+                        <td data-label="Séries x Reps">4 x 12</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="e1-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Stiff com Barra<span class="exercise-details">Joelhos levemente flexionados</span></td>
+                        <td data-label="Séries x Reps">3 x 12</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="e2-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Cadeira Abdutora<span class="exercise-details">Contração no ponto máximo</span></td>
+                        <td data-label="Séries x Reps">4 x 15</td>
+                        <td data-label="Intervalo">45s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="e3-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Chutes na Polia<span class="exercise-details">Kickback, contrair glúteo no topo</span></td>
+                        <td data-label="Séries x Reps">3 x 15/perna</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="e4-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Good Morning<span class="exercise-details">Com anilha, manter costas retas</span></td>
+                        <td data-label="Séries x Reps">3 x 12</td>
+                        <td data-label="Intervalo">40s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="e5-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                    <tr>
+                        <td class="exercise-name">Elevação de Panturrilha<span class="exercise-details">Em pé, amplitude completa</span></td>
+                        <td data-label="Séries x Reps">3 x 20</td>
+                        <td data-label="Intervalo">30s</td>
+                        <td data-label="Carga (kg)"><input type="number" id="e7-weight" min="0"></td>
+                        <td data-label="Observações"><input type="text" placeholder="Notas..."></td>
+                    </tr>
+                </tbody>
             </table>
             
             <div class="notes-section">
-                <h3>Observações Gerais do Treino E:</h3>
+                <h3>Observações Gerais:</h3>
                 <textarea placeholder="Registre suas impressões, dificuldades ou ajustes necessários..."></textarea>
             </div>
         </div>
         
-        <button class="print-button" onclick="window.print()">Imprimir Planilha</button>
+        <div class="action-buttons">
+            <button class="action-button" onclick="window.print()">Imprimir</button>
+            <button class="action-button blue" onclick="exportData()">Exportar</button>
+            <button class="action-button orange" onclick="importData()">Importar</button>
+        </div>
+        
+        <button class="quick-save" onclick="saveWeekData(currentWeek); vibrate()">💾</button>
     </div>
 
     <script>
-// JavaScript para controlar as abas
-function openTab(tabId) {
-    var tabContents = document.getElementsByClassName("tab-content");
-    for (var i = 0; i < tabContents.length; i++) {
-        tabContents[i].className = tabContents[i].className.replace(" active", "");
-    }
-    
-    var tabButtons = document.getElementsByClassName("tab-button");
-    for (var i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].className = tabButtons[i].className.replace(" active", "");
-    }
-    
-    document.getElementById(tabId).className += " active";
-    event.currentTarget.className += " active";
-}
-
-// Sistema de mudança de semanas
-let currentWeek = 1;
-
-// Verificar compatibilidade do localStorage
-let storageAvailable = false;
-try {
-    localStorage.setItem('test', 'test');
-    localStorage.removeItem('test');
-    storageAvailable = true;
-    console.log('localStorage está disponível');
-} catch (e) {
-    console.log('localStorage não está disponível');
-    alert('Seu navegador está bloqueando o salvamento local de dados. Os dados inseridos não serão salvos automaticamente. Recomendamos usar o botão "Imprimir Planilha" regularmente para preservar seu progresso.');
-}
-
-// Função alternativa de armazenamento usando variáveis de sessão
-let memoryStorage = {};
-
-function changeWeek(change) {
-    // Salvar dados da semana atual antes de mudar
-    saveWeekData(currentWeek);
-    
-    // Mudar de semana
-    currentWeek += change;
-    if (currentWeek < 1) currentWeek = 1;
-    document.getElementById('currentWeek').textContent = currentWeek;
-    
-    // Carregar dados da nova semana
-    loadWeekData(currentWeek);
-}
-
-// Função para salvar dados de uma semana
-function saveWeekData(week) {
-    let weekData = {
-        a1: document.getElementById('a1-weight').value,
-        a2: document.getElementById('a2-weight').value,
-        a3: document.getElementById('a3-weight').value,
-        a4: document.getElementById('a4-weight').value,
-        a5: document.getElementById('a5-weight').value,
-        b1: document.getElementById('b1-weight').value,
-        b2: document.getElementById('b2-weight').value,
-        b3: document.getElementById('b3-weight').value,
-        c1: document.getElementById('c1-time').value,
-        c4: document.getElementById('c4-time').value,
-        d1: document.getElementById('d1-weight').value,
-        d2: document.getElementById('d2-weight').value,
-        d3: document.getElementById('d3-weight').value,
-        d4: document.getElementById('d4-weight').value,
-        e1: document.getElementById('e1-weight').value,
-        e2: document.getElementById('e2-weight').value,
-        e3: document.getElementById('e3-weight').value,
-        e4: document.getElementById('e4-weight').value,
-        e5: document.getElementById('e5-weight').value,
-        e7: document.getElementById('e7-weight').value,
-        notes: {},
-        exerciseNotes: {}
-    };
-    
-    // Salvar as observações de cada treino
-    const textareas = document.querySelectorAll('textarea');
-    textareas.forEach((textarea, index) => {
-        weekData.notes['note' + index] = textarea.value;
-    });
-    
-    // Salvar as observações de cada exercício
-    const exerciseInputs = document.querySelectorAll('td input[type="text"][placeholder="Notas..."]');
-    exerciseInputs.forEach((input, index) => {
-        weekData.exerciseNotes['exercise' + index] = input.value;
-    });
-    
-    // Tentar salvar dados no localStorage
-    if (storageAvailable) {
-        try {
-            localStorage.setItem('trainWeek' + week, JSON.stringify(weekData));
-            console.log('Dados salvos com sucesso no localStorage');
-        } catch (e) {
-            console.log('Erro ao salvar no localStorage: ' + e);
-            // Usar armazenamento na memória como fallback
-            memoryStorage['trainWeek' + week] = weekData;
-        }
-    } else {
-        // Usar armazenamento na memória como fallback
-        memoryStorage['trainWeek' + week] = weekData;
-        console.log('Dados salvos na memória (sessão)');
-    }
-    
-    // Exibir feedback visual de salvamento
-    showSaveNotification();
-}
-
-// Função para carregar dados de uma semana
-function loadWeekData(week) {
-    let weekData = null;
-    
-    // Tentar carregar do localStorage
-    if (storageAvailable) {
-        try {
-            const savedData = localStorage.getItem('trainWeek' + week);
-            if (savedData) {
-                weekData = JSON.parse(savedData);
-                console.log('Dados carregados do localStorage');
+        // JavaScript para controlar as abas
+        function openTab(tabId) {
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].className = tabContents[i].className.replace(" active", "");
             }
-        } catch (e) {
-            console.log('Erro ao carregar do localStorage: ' + e);
+            
+            var tabButtons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            
+            document.getElementById(tabId).className += " active";
+            event.currentTarget.className += " active";
         }
-    }
-    
-    // Se não conseguiu do localStorage, tentar da memória
-    if (!weekData && memoryStorage['trainWeek' + week]) {
-        weekData = memoryStorage['trainWeek' + week];
-        console.log('Dados carregados da memória');
-    }
-    
-    if (weekData) {
-        // Carregar os pesos
-        document.getElementById('a1-weight').value = weekData.a1 || '';
-        document.getElementById('a2-weight').value = weekData.a2 || '';
-        document.getElementById('a3-weight').value = weekData.a3 || '';
-        document.getElementById('a4-weight').value = weekData.a4 || '';
-        document.getElementById('a5-weight').value = weekData.a5 || '';
-        document.getElementById('b1-weight').value = weekData.b1 || '';
-        document.getElementById('b2-weight').value = weekData.b2 || '';
-        document.getElementById('b3-weight').value = weekData.b3 || '';
-        document.getElementById('c1-time').value = weekData.c1 || '';
-        document.getElementById('c4-time').value = weekData.c4 || '';
-        document.getElementById('d1-weight').value = weekData.d1 || '';
-        document.getElementById('d2-weight').value = weekData.d2 || '';
-        document.getElementById('d3-weight').value = weekData.d3 || '';
-        document.getElementById('d4-weight').value = weekData.d4 || '';
-        document.getElementById('e1-weight').value = weekData.e1 || '';
-        document.getElementById('e2-weight').value = weekData.e2 || '';
-        document.getElementById('e3-weight').value = weekData.e3 || '';
-        document.getElementById('e4-weight').value = weekData.e4 || '';
-        document.getElementById('e5-weight').value = weekData.e5 || '';
-        document.getElementById('e7-weight').value = weekData.e7 || '';
-        
-        // Carregar as notas
-        const textareas = document.querySelectorAll('textarea');
-        textareas.forEach((textarea, index) => {
-            textarea.value = weekData.notes && weekData.notes['note' + index] ? weekData.notes['note' + index] : '';
-        });
-        
-        // Carregar as observações de cada exercício
-        if (weekData.exerciseNotes) {
+
+        // Sistema de mudança de semanas
+        let currentWeek = 1;
+
+        // Verificar compatibilidade do localStorage
+        let storageAvailable = false;
+        try {
+            localStorage.setItem('test', 'test');
+            localStorage.removeItem('test');
+            storageAvailable = true;
+            console.log('localStorage está disponível');
+        } catch (e) {
+            console.log('localStorage não está disponível');
+            alert('Seu navegador está bloqueando o salvamento local de dados. Os dados inseridos não serão salvos automaticamente. Recomendamos usar o botão "Exportar" regularmente para preservar seu progresso.');
+        }
+
+        // Função alternativa de armazenamento usando variáveis de sessão
+        let memoryStorage = {};
+
+        function changeWeek(change) {
+            // Salvar dados da semana atual antes de mudar
+            saveWeekData(currentWeek);
+            
+            // Mudar de semana
+            currentWeek += change;
+            if (currentWeek < 1) currentWeek = 1;
+            document.getElementById('currentWeek').textContent = currentWeek;
+            
+            // Carregar dados da nova semana
+            loadWeekData(currentWeek);
+        }
+
+        // Função para fazer vibrar em dispositivo móvel
+        function vibrate() {
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+        }
+
+        // Função para salvar dados de uma semana
+        function saveWeekData(week) {
+            let weekData = {
+                a1: document.getElementById('a1-weight').value,
+                a2: document.getElementById('a2-weight').value,
+                a3: document.getElementById('a3-weight').value,
+                a4: document.getElementById('a4-weight').value,
+                a5: document.getElementById('a5-weight').value,
+                b1: document.getElementById('b1-weight').value,
+                b2: document.getElementById('b2-weight').value,
+                b3: document.getElementById('b3-weight').value,
+                c1: document.getElementById('c1-time').value,
+                c4: document.getElementById('c4-time').value,
+                d1: document.getElementById('d1-weight').value,
+                d2: document.getElementById('d2-weight').value,
+                d3: document.getElementById('d3-weight').value,
+                d4: document.getElementById('d4-weight').value,
+                e1: document.getElementById('e1-weight').value,
+                e2: document.getElementById('e2-weight').value,
+                e3: document.getElementById('e3-weight').value,
+                e4: document.getElementById('e4-weight').value,
+                e5: document.getElementById('e5-weight').value,
+                e7: document.getElementById('e7-weight').value,
+                notes: {},
+                exerciseNotes: {}
+            };
+            
+            // Salvar as observações de cada treino
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach((textarea, index) => {
+                weekData.notes['note' + index] = textarea.value;
+            });
+            
+            // Salvar as observações de cada exercício
             const exerciseInputs = document.querySelectorAll('td input[type="text"][placeholder="Notas..."]');
             exerciseInputs.forEach((input, index) => {
-                input.value = weekData.exerciseNotes['exercise' + index] || '';
+                weekData.exerciseNotes['exercise' + index] = input.value;
+            });
+            
+            // Tentar salvar dados no localStorage
+            if (storageAvailable) {
+                try {
+                    localStorage.setItem('trainWeek' + week, JSON.stringify(weekData));
+                    console.log('Dados salvos com sucesso no localStorage');
+                } catch (e) {
+                    console.log('Erro ao salvar no localStorage: ' + e);
+                    // Usar armazenamento na memória como fallback
+                    memoryStorage['trainWeek' + week] = weekData;
+                }
+            } else {
+                // Usar armazenamento na memória como fallback
+                memoryStorage['trainWeek' + week] = weekData;
+                console.log('Dados salvos na memória (sessão)');
+            }
+            
+            // Exibir feedback visual de salvamento
+            showSaveNotification();
+        }
+
+        // Função para carregar dados de uma semana
+        function loadWeekData(week) {
+            let weekData = null;
+            
+            // Tentar carregar do localStorage
+            if (storageAvailable) {
+                try {
+                    const savedData = localStorage.getItem('trainWeek' + week);
+                    if (savedData) {
+                        weekData = JSON.parse(savedData);
+                        console.log('Dados carregados do localStorage');
+                    }
+                } catch (e) {
+                    console.log('Erro ao carregar do localStorage: ' + e);
+                }
+            }
+            
+            // Se não conseguiu do localStorage, tentar da memória
+            if (!weekData && memoryStorage['trainWeek' + week]) {
+                weekData = memoryStorage['trainWeek' + week];
+                console.log('Dados carregados da memória');
+            }
+            
+            if (weekData) {
+                // Carregar os pesos
+                document.getElementById('a1-weight').value = weekData.a1 || '';
+                document.getElementById('a2-weight').value = weekData.a2 || '';
+                document.getElementById('a3-weight').value = weekData.a3 || '';
+                document.getElementById('a4-weight').value = weekData.a4 || '';
+                document.getElementById('a5-weight').value = weekData.a5 || '';
+                document.getElementById('b1-weight').value = weekData.b1 || '';
+                document.getElementById('b2-weight').value = weekData.b2 || '';
+                document.getElementById('b3-weight').value = weekData.b3 || '';
+                document.getElementById('c1-time').value = weekData.c1 || '';
+                document.getElementById('c4-time').value = weekData.c4 || '';
+                document.getElementById('d1-weight').value = weekData.d1 || '';
+                document.getElementById('d2-weight').value = weekData.d2 || '';
+                document.getElementById('d3-weight').value = weekData.d3 || '';
+                document.getElementById('d4-weight').value = weekData.d4 || '';
+                document.getElementById('e1-weight').value = weekData.e1 || '';
+                document.getElementById('e2-weight').value = weekData.e2 || '';
+                document.getElementById('e3-weight').value = weekData.e3 || '';
+                document.getElementById('e4-weight').value = weekData.e4 || '';
+                document.getElementById('e5-weight').value = weekData.e5 || '';
+                document.getElementById('e7-weight').value = weekData.e7 || '';
+                
+                // Carregar as notas
+                const textareas = document.querySelectorAll('textarea');
+                textareas.forEach((textarea, index) => {
+                    textarea.value = weekData.notes && weekData.notes['note' + index] ? weekData.notes['note' + index] : '';
+                });
+                
+                // Carregar as observações de cada exercício
+                if (weekData.exerciseNotes) {
+                    const exerciseInputs = document.querySelectorAll('td input[type="text"][placeholder="Notas..."]');
+                    exerciseInputs.forEach((input, index) => {
+                        input.value = weekData.exerciseNotes['exercise' + index] || '';
+                    });
+                }
+            } else {
+                // Se não houver dados salvos, limpar os campos
+                clearFields();
+            }
+        }
+
+        // Função para limpar campos
+        function clearFields() {
+            const inputs = document.querySelectorAll('input[type="number"], input[type="text"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+            
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(textarea => {
+                textarea.value = '';
             });
         }
-    } else {
-        // Se não houver dados salvos, limpar os campos
-        clearFields();
-    }
-}
 
-// Função para limpar campos
-function clearFields() {
-    const inputs = document.querySelectorAll('input[type="number"], input[type="text"]');
-    inputs.forEach(input => {
-        input.value = '';
-    });
-    
-    const textareas = document.querySelectorAll('textarea');
-    textareas.forEach(textarea => {
-        textarea.value = '';
-    });
-}
-
-// Mostrar notificação de salvamento temporária
-function showSaveNotification() {
-    // Verificar se a notificação já existe
-    let notification = document.getElementById('save-notification');
-    if (!notification) {
-        // Criar elemento de notificação
-        notification = document.createElement('div');
-        notification.id = 'save-notification';
-        notification.style.position = 'fixed';
-        notification.style.bottom = '20px';
-        notification.style.right = '20px';
-        notification.style.backgroundColor = '#4CAF50';
-        notification.style.color = 'white';
-        notification.style.padding = '10px 15px';
-        notification.style.borderRadius = '5px';
-        notification.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-        notification.style.opacity = '0';
-        notification.style.transition = 'opacity 0.3s';
-        notification.textContent = 'Progresso salvo ✓';
-        document.body.appendChild(notification);
-    }
-    
-    // Mostrar notificação
-    setTimeout(() => {
-        notification.style.opacity = '1';
-        setTimeout(() => {
-            notification.style.opacity = '0';
-        }, 2000);
-    }, 100);
-}
-
-// Função para exportar dados para um arquivo
-function exportData() {
-    let allData = {};
-    
-    // Coletar dados de todas as semanas armazenadas
-    if (storageAvailable) {
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key.startsWith('trainWeek')) {
-                try {
-                    allData[key] = JSON.parse(localStorage.getItem(key));
-                } catch (e) {
-                    console.log('Erro ao processar ' + key);
-                }
+        // Mostrar notificação de salvamento temporária
+        function showSaveNotification() {
+            // Verificar se a notificação já existe
+            let notification = document.getElementById('save-notification');
+            if (!notification) {
+                // Criar elemento de notificação
+                notification = document.createElement('div');
+                notification.id = 'save-notification';
+                notification.style.position = 'fixed';
+                notification.style.bottom = '80px';
+                notification.style.right = '20px';
+                notification.style.backgroundColor = '#4CAF50';
+                notification.style.color = 'white';
+                notification.style.padding = '8px 12px';
+                notification.style.borderRadius = '5px';
+                notification.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.3s';
+                notification.style.fontSize = '0.8rem';
+                notification.textContent = 'Salvo ✓';
+                document.body.appendChild(notification);
             }
+            
+            // Mostrar notificação
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                }, 1500);
+            }, 100);
         }
-    }
-    
-    // Adicionar dados da memória
-    for (const key in memoryStorage) {
-        if (key.startsWith('trainWeek')) {
-            allData[key] = memoryStorage[key];
-        }
-    }
-    
-    // Converter para JSON e criar URL de download
-    const dataStr = JSON.stringify(allData, null, 2);
-    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-    
-    // Criar e clicar em um link de download
-    const exportLink = document.createElement('a');
-    exportLink.setAttribute('href', dataUri);
-    exportLink.setAttribute('download', 'planilha-treino-dados.json');
-    document.body.appendChild(exportLink);
-    exportLink.click();
-    document.body.removeChild(exportLink);
-}
 
-// Função para importar dados de um arquivo
-function importData() {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.json';
-    
-    input.onchange = e => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-        
-        reader.onload = event => {
-            try {
-                const data = JSON.parse(event.target.result);
-                
-                // Limpar dados existentes
-                if (storageAvailable) {
-                    for (let i = localStorage.length - 1; i >= 0; i--) {
-                        const key = localStorage.key(i);
-                        if (key.startsWith('trainWeek')) {
-                            localStorage.removeItem(key);
-                        }
-                    }
-                }
-                memoryStorage = {};
-                
-                // Importar novos dados
-                for (const key in data) {
+        // Função para exportar dados para um arquivo
+        function exportData() {
+            let allData = {};
+            
+            // Coletar dados de todas as semanas armazenadas
+            if (storageAvailable) {
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
                     if (key.startsWith('trainWeek')) {
-                        if (storageAvailable) {
-                            try {
-                                localStorage.setItem(key, JSON.stringify(data[key]));
-                            } catch (e) {
-                                memoryStorage[key] = data[key];
-                            }
-                        } else {
-                            memoryStorage[key] = data[key];
+                        try {
+                            allData[key] = JSON.parse(localStorage.getItem(key));
+                        } catch (e) {
+                            console.log('Erro ao processar ' + key);
                         }
                     }
                 }
-                
-                // Recarregar dados da semana atual
-                loadWeekData(currentWeek);
-                
-                alert('Dados importados com sucesso!');
-            } catch (e) {
-                alert('Erro ao importar dados. Verifique se o arquivo está no formato correto.');
-                console.error(e);
             }
-        };
-        
-        reader.readAsText(file);
-    };
-    
-    input.click();
-}
+            
+            // Adicionar dados da memória
+            for (const key in memoryStorage) {
+                if (key.startsWith('trainWeek')) {
+                    allData[key] = memoryStorage[key];
+                }
+            }
+            
+            // Converter para JSON e criar URL de download
+            const dataStr = JSON.stringify(allData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            // Criar e clicar em um link de download
+            const exportLink = document.createElement('a');
+            exportLink.setAttribute('href', dataUri);
+            
+            // Adicionar data atual ao nome do arquivo
+            const today = new Date();
+            const dateStr = today.getFullYear() + '-' + 
+                           (today.getMonth() + 1).toString().padStart(2, '0') + '-' + 
+                           today.getDate().toString().padStart(2, '0');
+            exportLink.setAttribute('download', 'treino-backup-' + dateStr + '.json');
+            
+            document.body.appendChild(exportLink);
+            exportLink.click();
+            document.body.removeChild(exportLink);
+            
+            // Feedback
+            alert('Backup criado com sucesso!\nGuarde este arquivo em local seguro.');
+        }
 
-// Adicionar botões de exportar e importar
-document.addEventListener('DOMContentLoaded', function() {
-    // Criar botão de exportar
-    const exportButton = document.createElement('button');
-    exportButton.className = 'print-button';
-    exportButton.style.backgroundColor = '#2196F3'; // Azul
-    exportButton.style.marginLeft = '10px';
-    exportButton.textContent = 'Exportar Dados';
-    exportButton.onclick = exportData;
-    
-    // Criar botão de importar
-    const importButton = document.createElement('button');
-    importButton.className = 'print-button';
-    importButton.style.backgroundColor = '#FF9800'; // Laranja
-    importButton.style.marginLeft = '10px';
-    importButton.textContent = 'Importar Dados';
-    importButton.onclick = importData;
-    
-    // Adicionar os botões após o botão de imprimir
-    const printButton = document.querySelector('.print-button');
-    printButton.parentNode.insertBefore(exportButton, printButton.nextSibling);
-    printButton.parentNode.insertBefore(importButton, exportButton.nextSibling);
-    
-    // Adicionar salvamento automático em inputs
-    const allInputs = document.querySelectorAll('input, textarea');
-    allInputs.forEach(input => {
-        input.addEventListener('change', () => {
+        // Função para importar dados de um arquivo
+        function importData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = e => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = event => {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        
+                        if (confirm('Isso substituirá todos os dados atuais. Continuar?')) {
+                            // Limpar dados existentes
+                            if (storageAvailable) {
+                                for (let i = localStorage.length - 1; i >= 0; i--) {
+                                    const key = localStorage.key(i);
+                                    if (key.startsWith('trainWeek')) {
+                                        localStorage.removeItem(key);
+                                    }
+                                }
+                            }
+                            memoryStorage = {};
+                            
+                            // Importar novos dados
+                            for (const key in data) {
+                                if (key.startsWith('trainWeek')) {
+                                    if (storageAvailable) {
+                                        try {
+                                            localStorage.setItem(key, JSON.stringify(data[key]));
+                                        } catch (e) {
+                                            memoryStorage[key] = data[key];
+                                        }
+                                    } else {
+                                        memoryStorage[key] = data[key];
+                                    }
+                                }
+                            }
+                            
+                            // Recarregar dados da semana atual
+                            loadWeekData(currentWeek);
+                            
+                            alert('Dados importados com sucesso!');
+                        }
+                    } catch (e) {
+                        alert('Erro ao importar dados. Verifique se o arquivo está no formato correto.');
+                        console.error(e);
+                    }
+                };
+                
+                reader.readAsText(file);
+            };
+            
+            input.click();
+        }
+
+        // Adicionar salvamento automático em inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adicionar salvamento automático em inputs
+            const allInputs = document.querySelectorAll('input, textarea');
+            allInputs.forEach(input => {
+                input.addEventListener('change', () => {
+                    saveWeekData(currentWeek);
+                });
+            });
+        });
+
+        // Auto-salvar dados quando mudar de aba
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                saveWeekData(currentWeek);
+            });
+        });
+
+        // Salvar dados ao fechar a página
+        window.addEventListener('beforeunload', () => {
             saveWeekData(currentWeek);
         });
-    });
-});
 
-// Auto-salvar dados quando mudar de aba
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        saveWeekData(currentWeek);
-    });
-});
-
-// Salvar dados ao fechar a página
-window.addEventListener('beforeunload', () => {
-    saveWeekData(currentWeek);
-});
-
-// Inicializar com dados da semana 1, se existirem
-loadWeekData(currentWeek);
+        // Inicializar com dados da semana 1, se existirem
+        loadWeekData(currentWeek);
     </script>
 </body>
 </html>
