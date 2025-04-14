@@ -549,13 +549,20 @@ function saveWeekData(week) {
         e4: document.getElementById('e4-weight').value,
         e5: document.getElementById('e5-weight').value,
         e7: document.getElementById('e7-weight').value,
-        notes: {}
+        notes: {},
+        exerciseNotes: {}
     };
     
     // Salvar as observações de cada treino
     const textareas = document.querySelectorAll('textarea');
     textareas.forEach((textarea, index) => {
         weekData.notes['note' + index] = textarea.value;
+    });
+    
+    // Salvar as observações de cada exercício
+    const exerciseInputs = document.querySelectorAll('td input[type="text"][placeholder="Notas..."]');
+    exerciseInputs.forEach((input, index) => {
+        weekData.exerciseNotes['exercise' + index] = input.value;
     });
     
     // Tentar salvar dados no localStorage
@@ -627,8 +634,16 @@ function loadWeekData(week) {
         // Carregar as notas
         const textareas = document.querySelectorAll('textarea');
         textareas.forEach((textarea, index) => {
-            textarea.value = weekData.notes['note' + index] || '';
+            textarea.value = weekData.notes && weekData.notes['note' + index] ? weekData.notes['note' + index] : '';
         });
+        
+        // Carregar as observações de cada exercício
+        if (weekData.exerciseNotes) {
+            const exerciseInputs = document.querySelectorAll('td input[type="text"][placeholder="Notas..."]');
+            exerciseInputs.forEach((input, index) => {
+                input.value = weekData.exerciseNotes['exercise' + index] || '';
+            });
+        }
     } else {
         // Se não houver dados salvos, limpar os campos
         clearFields();
